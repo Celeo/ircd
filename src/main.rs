@@ -54,7 +54,7 @@ async fn process_socket(mut socket: TcpStream) {
         let read = std::str::from_utf8(read).unwrap();
         if read.len() > 2 {
             info!(": {}", read.trim());
-            socket.write(b"I hear you\n").await.unwrap();
+            _ = socket.write(b"I hear you\n").await.unwrap();
         }
     }
 }
