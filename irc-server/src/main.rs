@@ -3,11 +3,7 @@
 #![deny(unsafe_code)]
 
 use clap::Parser;
-use std::env;
-use tokio::{
-    io::{AsyncReadExt, AsyncWriteExt},
-    net::{TcpListener, TcpStream},
-};
+use tokio::net::TcpListener;
 
 /// ircd, a simple IRC server implementation.
 #[derive(Debug, Parser)]
@@ -33,8 +29,7 @@ async fn main() {
     let address = format!("{}:{}", cli.host, cli.port);
     let listener = TcpListener::bind(&address).await.unwrap();
     loop {
-        let (socket, _) = listener.accept().await.unwrap();
+        let (_socket, _) = listener.accept().await.unwrap();
         // ...
     }
 }
-
