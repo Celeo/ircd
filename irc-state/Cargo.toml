@@ -2,5 +2,11 @@
 name = "irc-state"
 version = "0.1.0"
 edition = "2024"
+authors = ["Celeo <mattboulanger@fastmail.com>"]
+description = "IRC state management"
 
 [dependencies]
+bitflags = "2.13.0"
+bytes = "1.11.1"
+compact_str = "0.9.1"
+thiserror = "2.0.18"
